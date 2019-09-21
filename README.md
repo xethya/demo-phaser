@@ -4,6 +4,12 @@ This a minimal repo to show how `@xethya/bridge-phaser` works.
 
 ## Using the plugin
 
+Install the package:
+
+```shell
+yarn add @xethya/bridge-phaser
+```
+
 Add it to your game's configuration like this:
 
 ```ts
