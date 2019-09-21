@@ -1,22 +1,28 @@
-# Phaser 3 TypeScript/Webpack Project Template
+# Xethya + Phaser = <3
 
-A Phaser 3 TypeScript Template
+This a minimal repo to show how `@xethya/bridge-phaser` works.
 
-Modeled after [Phaser 3 Project Template](https://github.com/photonstorm/phaser3-project-template)
+## Using the plugin
 
-### Requirements
+Add it to your game's configuration like this:
 
-We need [Node.js](https://nodejs.org) to install and run scripts.
+```ts
+  plugins: {
+    global: [
+      {
+        key: "XethyaPlugin",
+        plugin: XethyaPlugin,
+        start: true,
+      },
+    ],
+  },
+```
 
-## Install and run
+When on a `Scene` (or any object that includes `GameObjectFactory`), you'll have these functions available:
 
-Run next commands in your terminal:
+- From `@xethya/dice`: `add.die(faces)`, `add.coinFlip()`, `add.d4()`, `add.d6()`, `add.d8()`, `add.d10()`, `add.d12()`, `add.d20()`, `add.d100()`.
+- From `@xethya/inventory`: `add.inventory(options)`.
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install dependencies and launch browser with examples.|
-| `npm run build:dev` | Builds a unminified copy of your game, with source maps, for debugging purposes. |
-| `npm run build:prod` | Builds a minified copy of your game without source maps for production use. |
-| `npm start` | Launch browser of choice and navigate to [http://localhost:8080/](http://localhost:8080/). <br> Press `Ctrl + C` in NodeJS terminal to kill **webpack-dev-server** process. |
-=======
+## Trying out the game
 
+Run `yarn start` on your terminal and go to `http://localhost:8080`.
